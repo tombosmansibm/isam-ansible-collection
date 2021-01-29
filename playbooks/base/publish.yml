@@ -1,6 +1,6 @@
 ---
 # publish docker changes
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   connection: local
   gather_facts: no
   roles:

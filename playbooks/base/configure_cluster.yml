@@ -11,7 +11,7 @@
 #     hvdb_password: test
 #     hvdb_db_name: ISAM_HVDB
 #     hvdb_db_secure: false
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.base/configure_cluster

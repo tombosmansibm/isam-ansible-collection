@@ -82,7 +82,7 @@
   loop: "{{ federations }}"
   when:
     - federations is defined
-    - item.name is defined 
+    - item.name is defined
     - item.name == fed_name
   notify: Commit Changes
   loop_control:

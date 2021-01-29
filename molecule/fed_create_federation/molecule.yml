@@ -1,18 +1,18 @@
 ---
 dependency:
   name: galaxy
-  collections: 
+  collections:
     -  ibm.isam
 driver:
   name: delegated
 platforms:
   - name: instance
 lint:
-  ansible-lint
+  ansible-lint -x 702 -f plain
 provisioner:
   name: ansible
   lint:
-    name: ansible-lint
+    name: ansible-lint -x 702 -f plain
     enabled: True
   ansible_args:
     - -e ansible_python_interpreter=/home/tbosmans/venvisam/bin/python

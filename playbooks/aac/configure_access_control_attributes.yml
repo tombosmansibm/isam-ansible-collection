@@ -18,7 +18,7 @@
 #           device: false
 #           session: false
 #           behavior: false
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.aac/configure_access_control_attributes

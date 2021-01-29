@@ -32,7 +32,7 @@
   register: ret_obj
   when: first_steps_fips
 - name: debug
-  debug: 
+  debug:
     msg: "{{ ret_obj }}"
 # Restart after FIPS if needed
 - name: Restart after enabling FIPS
@@ -72,7 +72,7 @@
   register: ret_obj
 
 - name: Debug setup
-  debug: 
+  debug:
      msg: "{{ret_obj | default('') | to_nice_yaml}}"
      verbosity: 2
 

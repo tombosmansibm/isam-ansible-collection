@@ -5,7 +5,8 @@
   vars:
     homedir: ""
   tasks:
-    - include_vars:
+    - name: include vars
+      include_vars:
         file: "../vars/fed_cookbook_idp_vars.yml"
         name: inventory
 
@@ -149,7 +150,8 @@
     - name: "17.2 Configuring the STS Test Module Chain - set fact to save stsuu template id"
       set_fact:
         stsuu_id: "{{ item.prefix }}"
-      when: "{{ item.id == inventory.sts_template_content_id }}"
+      when: 
+        - item.id == inventory.sts_template_content_id
       with_items: "{{ ret_obj.data.chainItems }}"
 
     - name: "17.2 Configuring the STS Test Module Chain - get mapping rule id"
@@ -272,13 +274,16 @@
     - name: "18.3.4 Modify STS Test Module Chain - set fact to save ip_pre_ldap uuid"
       set_fact:
         pre_mapper_uuid: "{{ item.prefix }}"
-      when: "{{ pre_mapper_uuid is not defined and item.id == inventory.mapper_name }}"
+      when: 
+        - pre_mapper_uuid is not defined
+        - item.id == inventory.mapper_name
       with_items: "{{ ret_obj.data.chainItems }}"
 
     - name: "18.3.4 Modify STS Test Module Chain - set fact to save ip_post_ldap uuid"
       set_fact:
         post_mapper_uuid: "{{ item.prefix }}"
-      when: "{{ item.id == inventory.mapper_name }}"
+      when: 
+        - item.id == inventory.mapper_name
       with_items: "{{ ret_obj.data.chainItems }}"
 
     - name: "18.3.4 Modify STS Test Module Chain - get ip_pre_ldap mapping rule id"

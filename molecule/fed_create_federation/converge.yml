@@ -5,11 +5,13 @@
   collections:
     - ibm.isam
   tasks:
-    - include_vars:
+    - name: include vars
+      include_vars:
         file: "../vars/fed_cookbook_sp_vars.yml"
         name: inventory
 
-    - set_fact:
+    - name: set variable
+      set_fact:
          federations:
               - name: "OIDC"
                 protocol: "OIDC10"

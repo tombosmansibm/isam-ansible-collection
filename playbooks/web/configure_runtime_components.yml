@@ -6,7 +6,7 @@
 #       entries:
 #       - { method: update, resource_id: "ldap.conf", stanza_id: "bind-credentials", entry_id: "bind-dn", value_id: "{{ ldap_dn }}" }
 #       - { method: update, resource_id: "ldap.conf", stanza_id: "bind-credentials", entry_id: "bind-pwd", value_id: "{{ ldap_pwd }}" }
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.web/configure_runtime_components

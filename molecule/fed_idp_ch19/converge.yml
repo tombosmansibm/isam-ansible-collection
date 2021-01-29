@@ -5,7 +5,8 @@
   vars:
     homedir: ""
   tasks:
-    - include_vars:
+    - name: include vars
+      include_vars:
         file: "../vars/fed_cookbook_idp_vars.yml"
         name: inventory
 

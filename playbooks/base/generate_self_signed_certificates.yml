@@ -10,7 +10,7 @@
 #      default: "{{ item.default }}"
 #      size: "{{ item.size }}"
 
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.base/generate_self_signed_certificates

@@ -9,7 +9,7 @@
 #           grantTypes:
 #             - AUTHORIZATION_CODE
 #           tcmBehavior: NEVER_PROMPT
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.aac/create_api_protection_definitions

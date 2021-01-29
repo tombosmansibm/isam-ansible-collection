@@ -1,7 +1,7 @@
 ---
 # import
 #   import certificate mapping files
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.web/import_certificate_mapping_files

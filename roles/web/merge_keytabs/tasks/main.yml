@@ -13,17 +13,7 @@
 #             - keytab2.keytab
 ---
 - name: Get krb configuration
-  isam:
-    appliance: "{{ inventory_hostname }}"
-    adminProxyProtocol: "{{ adminProxyProtocol | default(omit) }}"
-    adminProxyHostname: "{{ adminProxyHostname | default(omit) }}"
-    adminProxyPort: "{{ adminProxyPort | default(omit) }}"
-    adminProxyApplianceShortName:
-      "{{ adminProxyApplianceShortName | default(omit) }}"
-    omitAdminProxy: "{{ omitAdminProxy | default(omit) }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
-    lmi_port: "{{ port | default(omit) }}"
+  ibm.isam.isam:
     log: "{{ log_level | default(omit) }}"
     force: "{{ force | default(omit) }}"
     action: ibmsecurity.isam.web.kerberos_configuration.keyfiles.get
@@ -33,19 +23,8 @@
 
 # TODO: test if the keyfiles to merge are there
 # TODO: check if the combined keyfile is there (if there already, delete ?)
-
 - name: Merge keytabs
-  isam:
-    appliance: "{{ inventory_hostname }}"
-    adminProxyProtocol: "{{ adminProxyProtocol | default(omit) }}"
-    adminProxyHostname: "{{ adminProxyHostname | default(omit) }}"
-    adminProxyPort: "{{ adminProxyPort | default(omit) }}"
-    adminProxyApplianceShortName:
-      "{{ adminProxyApplianceShortName | default(omit) }}"
-    omitAdminProxy: "{{ omitAdminProxy | default(omit) }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
-    lmi_port: "{{ port | default(omit) }}"
+  ibm.isam.isam:
     log: "{{ log_level | default(omit) }}"
     force: "{{ force | default(omit) }}"
     action: ibmsecurity.isam.web.kerberos_configuration.keyfiles.combine

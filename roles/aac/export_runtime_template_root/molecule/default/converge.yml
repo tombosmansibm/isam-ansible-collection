@@ -4,7 +4,8 @@
   hosts: all
   gather_facts: no
   tasks:
-    - include_vars:
+    - name: include vars
+      include_vars:
         file: "../../vars/main.yml"
         name: inventory
 

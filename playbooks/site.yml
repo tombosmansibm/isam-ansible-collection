@@ -108,7 +108,7 @@
       tags: ["pdadmin", "object", "create"]
       execute_pdadmin_commands:
         - "object create /WebSEAL/ibm \"Common Web Root for all Reverse Proxies\" 5 ispolicyattachable yes"
-      execute_pdadmin_isamuser: "{{sec_master_id}}"
+      execute_pdadmin_isamuser: "{{ sec_master_id }}"
       execute_pdadmin_isampwd: "{{sec_master_pwd}}"
 
 - name: Setup Restricted Appliances

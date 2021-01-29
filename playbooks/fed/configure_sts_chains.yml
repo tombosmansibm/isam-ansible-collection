@@ -12,7 +12,7 @@
 #             mode: map
 #           - id: default-ltpa
 #             mode: issue
-- hosts: "{{ hosts | default('all')}}"
+- hosts: "{{ hosts | default('all')}} "
   gather_facts: no
   roles:
     - role: ibm.isam.fed/configure_sts_chains
