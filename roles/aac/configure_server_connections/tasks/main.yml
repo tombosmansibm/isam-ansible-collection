@@ -19,8 +19,8 @@
       EXAMPLES
         ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_server_connections.yml
         // configure all server connections without password idempotency
-        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_server_connections.yml -e ignore_password_for_idempotency=True 
-        // configure all server connections and ignore password for idempotency (all other parameters will be compared). 
+        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_server_connections.yml -e ignore_password_for_idempotency=True
+        // configure all server connections and ignore password for idempotency (all other parameters will be compared).
         // This configuration can be global or on seperate server connection level (see inventory samples)
 
         // only configure server connection for corresponding class

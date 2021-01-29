@@ -150,7 +150,7 @@
     - name: "17.2 Configuring the STS Test Module Chain - set fact to save stsuu template id"
       set_fact:
         stsuu_id: "{{ item.prefix }}"
-      when: 
+      when:
         - item.id == inventory.sts_template_content_id
       with_items: "{{ ret_obj.data.chainItems }}"
 
@@ -274,7 +274,7 @@
     - name: "18.3.4 Modify STS Test Module Chain - set fact to save ip_pre_ldap uuid"
       set_fact:
         pre_mapper_uuid: "{{ item.prefix }}"
-      when: 
+      when:
         - pre_mapper_uuid is not defined
         - item.id == inventory.mapper_name
       with_items: "{{ ret_obj.data.chainItems }}"
@@ -282,7 +282,7 @@
     - name: "18.3.4 Modify STS Test Module Chain - set fact to save ip_post_ldap uuid"
       set_fact:
         post_mapper_uuid: "{{ item.prefix }}"
-      when: 
+      when:
         - item.id == inventory.mapper_name
       with_items: "{{ ret_obj.data.chainItems }}"
 
