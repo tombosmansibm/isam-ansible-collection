@@ -17,7 +17,7 @@
       set_fact:
         check_exist: "id exist"
       with_items: "{{ ret_obj.data }}"
-      when:  inventory.id in item.id 
+      when:  inventory.id in item.id
 
     - name: "Assert that the user registry {{ inventory.id }} was deleted"
       assert:

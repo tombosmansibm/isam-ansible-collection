@@ -26,7 +26,7 @@
     - name: "17.2 Configuring the STS Test Module Chain - set fact to save stsuu template id"
       set_fact:
         stsuu_id: "{{ item.prefix }}"
-      when:  item.id == inventory.sts_template_content_id 
+      when:  item.id == inventory.sts_template_content_id
       with_items: "{{ ret_obj.data.chainItems }}"
 
     - name: "17.2 Configuring the STS Test Module Chain - get mapping rule id"
