@@ -1,7 +1,7 @@
 ---
 # Apply
 #   apply snapshot
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.base.apply_snapshot

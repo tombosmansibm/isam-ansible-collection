@@ -13,7 +13,7 @@
 #                     maskOrPrefix: "24"
 #                     allowManagement: false
 #                     enabled: true
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.base/add_interfaces

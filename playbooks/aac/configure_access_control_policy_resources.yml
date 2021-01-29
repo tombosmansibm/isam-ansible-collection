@@ -6,7 +6,7 @@
 #       - server: /WebSEAL/default
 #         resourceUri: /index.html
 #         policyType: application
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.aac/configure_access_control_policy_resources

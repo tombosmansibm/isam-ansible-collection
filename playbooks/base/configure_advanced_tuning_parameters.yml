@@ -1,7 +1,7 @@
 ---
 # Configure
 #   configure advanced tuning parameters
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.base.configure_advanced_tuning_parameters

@@ -4,7 +4,7 @@
 #   Example:
 #     http_transformations
 #       - file: uploads/http_transformations/default.xslt
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.web/upload_http_transformation_files

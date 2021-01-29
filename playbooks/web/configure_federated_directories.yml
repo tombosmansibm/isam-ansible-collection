@@ -5,7 +5,7 @@
 #     policyserver_runtime:
 #       federated_directories:
 #
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.web/configure_federated_directories

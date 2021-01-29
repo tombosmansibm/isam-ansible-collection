@@ -3,7 +3,7 @@
 #   description
 #   Example:
 #      iterator:
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.base/playbook

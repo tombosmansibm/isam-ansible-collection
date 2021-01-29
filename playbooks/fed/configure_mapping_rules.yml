@@ -6,7 +6,7 @@
 #       -   name: mapping_rule_1
 #           file: "uploads/mapping_rules/<file-name>.js"
 #           category: InfoMap
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.aac/configure_mapping_rules

@@ -3,7 +3,7 @@
 # Example:
 #   import_keytab_files:
 #     - file: uploads/kerberos/kerberos.krb5
-- hosts: "{{ hosts | default('all')}} "
+- hosts: "{{ hosts | default('all') }}"
   gather_facts: no
   roles:
     - role: ibm.isam.web/import_keytab_files

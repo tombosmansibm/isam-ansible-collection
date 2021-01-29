@@ -1233,7 +1233,7 @@ roles/aac/configure_runtime_template_root/tasks/main.yml:92
 
 602 Don't compare to empty string
 roles/aac/configure_runtime_template_root/tasks/main.yml:93
-    - file != ''
+    - file|length > 0
 
 201 Trailing whitespace
 roles/aac/configure_runtime_template_root/tasks/main.yml:95
@@ -1253,7 +1253,7 @@ roles/aac/configure_runtime_template_root/tasks/main.yml:106
 
 602 Don't compare to empty string
 roles/aac/configure_runtime_template_root/tasks/main.yml:107
-    - file != ''
+    - file|length > 0
 
 201 Trailing whitespace
 roles/aac/configure_runtime_template_root/tasks/main.yml:114
@@ -1297,7 +1297,7 @@ roles/aac/configure_runtime_template_root/tasks/main.yml:237
 
 602 Don't compare to empty string
 roles/aac/configure_runtime_template_root/tasks/main.yml:239
-    - file != ''
+    - file|length > 0
 
 201 Trailing whitespace
 roles/aac/configure_runtime_template_root/tasks/main.yml:246
@@ -2189,7 +2189,7 @@ roles/base/download_snapshots/tasks/main.yml:41
 
 602 Don't compare to empty string
 roles/base/download_snapshots/tasks/main.yml:42
-    - file != ''
+    - file|length > 0
 
 204 Lines should be no longer than 160 chars
 roles/base/download_snapshots/tasks/main.yml:44
@@ -3009,7 +3009,7 @@ roles/web/configure_management_root/tasks/main.yml:79
 
 602 Don't compare to empty string
 roles/web/configure_management_root/tasks/main.yml:80
-    - file != ''
+    - file|length > 0
 
 201 Trailing whitespace
 roles/web/configure_management_root/tasks/main.yml:82
@@ -3029,7 +3029,7 @@ roles/web/configure_management_root/tasks/main.yml:94
 
 602 Don't compare to empty string
 roles/web/configure_management_root/tasks/main.yml:95
-    - file != ''
+    - file|length > 0
 
 602 Don't compare to empty string
 roles/web/configure_management_root/tasks/main.yml:97
@@ -3137,7 +3137,7 @@ roles/web/configure_management_root/tasks/main.yml:282
 
 602 Don't compare to empty string
 roles/web/configure_management_root/tasks/main.yml:283
-    - file != ''
+    - file|length > 0
 
 602 Don't compare to empty string
 roles/web/configure_management_root/tasks/main.yml:285
