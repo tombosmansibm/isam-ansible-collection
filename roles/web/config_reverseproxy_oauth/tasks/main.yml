@@ -30,7 +30,7 @@
             hostname: localhost
             port: '443'
             username: easuser
-            password: {{ '{{' }} vault_easuser_pwd {{ '}}' }} # ansible-vault secured pwd
+            password: {{ '{{' }} vault_easuser_pwd {{ ' }}' }} # ansible-vault secured pwd
             junction: /mga
             api: True
             browser: True

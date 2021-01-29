@@ -31,7 +31,7 @@
       pdadmin_commands:
         - user list * 10
         - server list
-        - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ '}}' }}"
+        - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ ' }}' }}"
         - help
         - exit
 
@@ -46,7 +46,7 @@
         - server list
       # host_vars/isva-1.ibm.com.yml:
       2_level_pdadmin_commands__to_merge:
-        - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ '}}' }}"
+        - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ ' }}' }}"
         - help
         - exit
       # Note that the variables get merged in alphabetical order of their names, with values from later dicts replacing values from earlier dicts.
@@ -54,7 +54,7 @@
       #  pdadmin_commands:
       #   - user list * 10
       #   - server list
-      #   - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ '}}' }}"
+      #   - "user create testuser1 uid=testuser1,dc=iswga testuser1 testuser1 {{ '{{' }} testuser1_password {{ ' }}' }}"
       #   - help
       #   - exit
       ==========

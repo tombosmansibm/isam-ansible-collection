@@ -73,7 +73,7 @@
 
 - name: Debug setup
   debug:
-     msg: "{{ret_obj | default('') | to_nice_yaml}}"
+     msg: "{{ret_obj | default('') | to_nice_yaml }}"
      verbosity: 2
 
 - name: Set password

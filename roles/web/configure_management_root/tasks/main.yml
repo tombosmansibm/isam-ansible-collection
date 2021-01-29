@@ -60,7 +60,7 @@
             - mgmt_action: import_zip
               file: files/management_root_files/management_root_2020-09-16.zip
             - mgmt_action: export_zip
-              file: "/ansible/inventory/simple/files/management_root_files/management_root_{{ '{{' }} ansible_date_time.date {{ '}}' }}.zip"
+              file: "/ansible/inventory/simple/files/management_root_files/management_root_{{ '{{' }} ansible_date_time.date {{ ' }}' }}.zip"
       ==========
 
       INTERACTION
@@ -223,7 +223,7 @@
     - management_root
     - skip_missing: True
   loop_control:
-    label: "{ 'mgmt_action': \"{{ item.1.mgmt_action }}\", 'type': \"{{ item.1.type | default('file')}}\", 'inst_name': \"{{ item.0.inst_name }}\", 'target': \"{{ item.1.target | default('none') }}\"}"
+    label: "{ 'mgmt_action': \"{{ item.1.mgmt_action }}\", 'type': \"{{ item.1.type | default('file') }}\", 'inst_name': \"{{ item.0.inst_name }}\", 'target': \"{{ item.1.target | default('none') }}\"}"
   notify: Commit Changes
 
 - include: include_delete_management_root_contents.yml

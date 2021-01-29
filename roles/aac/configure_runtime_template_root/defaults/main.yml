@@ -26,7 +26,7 @@ skip_sync: false
 
 path: "{{ item.path | default(omit) }}"
 dir_name: "{{ item.name | default(omit) }}"
-id: "{{ item.id | default(omit)}}"
+id: "{{ item.id | default(omit) }}"
 file: "{{ item.file if (item is defined and item.file is defined) }}"
 target: "{{ item.target | default(omit) }}"
 directory: "{{ item.directory | default(omit) }}"

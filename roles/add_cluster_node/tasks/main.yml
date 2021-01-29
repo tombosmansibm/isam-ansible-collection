@@ -1,5 +1,5 @@
 ---
-- name: Check if Signature File Exists - {{ add_cluster_node_signature_file|default('')}}
+- name: Check if Signature File Exists - {{ add_cluster_node_signature_file|default('') }}
   stat:
     path: "{{ add_cluster_node_signature_file }}"
     get_checksum: False

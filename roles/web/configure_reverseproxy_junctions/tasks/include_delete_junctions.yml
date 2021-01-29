@@ -24,4 +24,4 @@
   loop: "{{ ret_obj.data | default([]) }}"
   loop_control:
     loop_var: server
-    label: "{delete_junctions: {{ delete_junctions }}, inst_name: {{ item.inst_name }}, junction_point: {{ server.id }}}"
+    label: "{delete_junctions: {{ delete_junctions }}, inst_name: {{ item.inst_name }}, junction_point: {{ server.id } }}"

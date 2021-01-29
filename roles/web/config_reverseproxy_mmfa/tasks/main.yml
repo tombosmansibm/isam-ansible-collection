@@ -31,12 +31,12 @@
               hostname: isva-1.ibm.com
               port: '443'
               username: admin
-              password: {{ '{{' }} vault_ansible_password {{ '}}' }} # ansible-vault secured pwd
+              password: {{ '{{' }} vault_ansible_password {{ ' }}' }} # ansible-vault secured pwd
             runtime:
               hostname: localhost
               port: '443'
               username: easuser
-              password: {{ '{{' }} vault_easuser_pwd {{ '}}' }} # ansible-vault secured pwd
+              password: {{ '{{' }} vault_easuser_pwd {{ ' }}' }} # ansible-vault secured pwd
             reuse_acls: True
             reuse_certs: True
             channel: browser # 'browser' or 'mobile' or unset to configure both

@@ -54,7 +54,7 @@
   ibm.isam.isam:
     log: "{{ log_level | default(omit) }}"
     force: "{{ force | default(omit) }}"
-    action: "ibmsecurity.isam.aac.policy_information_points.{{ item.class}}.{{ item.pip_action }}"
+    action: "ibmsecurity.isam.aac.policy_information_points.{{ item.class }}.{{ item.pip_action }}"
     isamapi: "{{
       { 'name': item.name }
       | combine({ 'properties': item.properties } if (item.properties is defined) else {})

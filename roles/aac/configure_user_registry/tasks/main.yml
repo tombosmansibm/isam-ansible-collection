@@ -32,7 +32,7 @@
         # set password for existing user registry user
         - registry_action: user.set_pw
           id: easuser
-          password: "{{ '{{' }} easuser_password {{ '}}' }}" # this variable should be secured in an ansible-vault
+          password: "{{ '{{' }} easuser_password {{ ' }}' }}" # this variable should be secured in an ansible-vault
         # get all registry users
         - registry_action: user.get_all
         # get a particular user. Check if user exists and get groups user belongs to
@@ -41,7 +41,7 @@
         # add a new user + add directly to adminGroup
         - registry_action: user.add
           id: new_user
-          password: "{{ '{{' }} new_user_password {{ '}}' }}" # this variable should be secured in an ansible-vault
+          password: "{{ '{{' }} new_user_password {{ ' }}' }}" # this variable should be secured in an ansible-vault
           groups:
             - adminGroup
         # delete an existing user

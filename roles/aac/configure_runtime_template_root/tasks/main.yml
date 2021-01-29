@@ -64,7 +64,7 @@
         - tmpl_action: import_zip
           file: files/runtime_template_root_files/runtime_template_root_2020-09-23.zip
         - tmpl_action: export_zip
-          file: "files/runtime_template_root_files/runtime_template_root__{{ '{{' }} ansible_date_time.date {{ '}}' }}.zip"
+          file: "files/runtime_template_root_files/runtime_template_root__{{ '{{' }} ansible_date_time.date {{ ' }}' }}.zip"
         - tmpl_action: delete
           target: errors/C/38ad52fa.html
           type: file

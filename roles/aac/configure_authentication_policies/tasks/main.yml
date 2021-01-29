@@ -27,7 +27,7 @@
       authentication_policies:
         # create authentication policy
         # Attention: the PolicyId attribute inside the policy element must be identitcal to the uri element. Either use ansible variable or keep them manually in sync!
-        #            e.g. globally define `test_auth_policy_1_uri: urn:ibm:security:authentication:asf:test_auth_policy_1` and use {{ '{{' }} test_auth_policy_1_uri {{ '}}' }} inside authentication_policies dict
+        #            e.g. globally define `test_auth_policy_1_uri: urn:ibm:security:authentication:asf:test_auth_policy_1` and use {{ '{{' }} test_auth_policy_1_uri {{ ' }}' }} inside authentication_policies dict
         - policy_action: set
           name: test_auth_policy_1
           description: Test authentication policy

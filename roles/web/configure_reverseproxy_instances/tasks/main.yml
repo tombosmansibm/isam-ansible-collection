@@ -69,7 +69,7 @@
   ibm.isam.isam:
     log: "{{ log_level | default(omit) }}"
     force: "{{ force | default(omit) }}"
-    action: "ibmsecurity.isam.web.reverse_proxy.configuration.{{ 'entry' if (item.1.entries is defined or item.1.entry_id is defined) else 'stanza'}}.{{ item.1.method }}"
+    action: "ibmsecurity.isam.web.reverse_proxy.configuration.{{ 'entry' if (item.1.entries is defined or item.1.entry_id is defined) else 'stanza' }}.{{ item.1.method }}"
     isamapi: "{{ item.1 | ibm.isam.exclude('method') | combine({ 'reverseproxy_id': item.0.inst_name }) | ibm.isam.include_only(entry_id) }}"
   with_subelements:
     - "{{ instances }}"
@@ -83,5 +83,5 @@
       (item.1.entry_id is defined and item.1.entry_id == entry_id and entry_id != '') or
       (item.1.entries is not defined and item.1.entry_id is not defined and entry_id == '')
   loop_control:
-    label: "{'method': {{ item.1.method }}, inst_name: {{ item.0.inst_name }}, stanza_id: {{ item.1.stanza_id }}{{ (', ' + \"'entries'\" + ': ' + (item.1.entries | join(''))) if item.1.entries is defined }}{{ (', ' + \"'entry_id'\" + ': ' + item.1.entry_id) if item.1.entry_id is defined }}{{ (', ' + \"'value_id'\" + ': ' + item.1.value_id) if item.1.value_id is defined }}}"
+    label: "{'method': {{ item.1.method }}, inst_name: {{ item.0.inst_name }}, stanza_id: {{ item.1.stanza_id }}{{ (', ' + \"'entries'\" + ': ' + (item.1.entries | join(''))) if item.1.entries is defined }}{{ (', ' + \"'entry_id'\" + ': ' + item.1.entry_id) if item.1.entry_id is defined }}{{ (', ' + \"'value_id'\" + ': ' + item.1.value_id) if item.1.value_id is defined } }}"
   notify: Commit Changes

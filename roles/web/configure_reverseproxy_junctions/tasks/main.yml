@@ -58,7 +58,7 @@
               insert_ltpa_cookies: "yes"                                # Controls whether LTPA cookies are passed to the junctioned Web server. Valid value is "yes" or "no".
               insert_session_cookies: "no"                              # Controls whether to send the session cookie to the junctioned Web server. Valid value is "yes" or "no".
               version_two_cookies: "yes"                                # Specifies whether LTPA version 2 cookies (LtpaToken2) are used. Valid value is "yes" or "no".
-              ltpa_keyfile_password: "'{{ '{{' }} ltpa_pwd {{ '}}' }}'" # Password for the key file that is used to encrypt LTPA cookie data.
+              ltpa_keyfile_password: "'{{ '{{' }} ltpa_pwd {{ ' }}' }}'" # Password for the key file that is used to encrypt LTPA cookie data.
               ltpa_keyfile: "ltpafile.key"                              # Location of the key file that is used to encrypt the LTPA cookie data.
               request_encoding: "utf8_uri"                              # Specifies the encoding to use when the system generates HTTP headers for junctions. Possible values for encoding are: utf8_bin, utf8_uri, lcp_bin, and lcp_uri.
               enable_basic_auth: "no"                                   # Specifies whether to use BA header information to authenticate to back-end server. Valid value is "yes" or "no".
@@ -69,7 +69,7 @@
               authz_rules: "yes"                                        # Specifies whether to allow denied requests and failure reason information from authorization rules to be sent in the Boolean Rule header (AM_AZN_FAILURE) across the junction. Valid value is "yes" or "no".
               fsso_config_file: "fsso.file"                             # The name of the configuration file that is used for forms based single sign-on.
               username: "user1"                                         # The Reverse Proxy user name. Used to send BA header information to the back-end server.
-              password: "'{{ '{{' }} user1_password {{ '}}' }}'"        # The Reverse Proxy password. Used to send BA header information to the back-end server.
+              password: "'{{ '{{' }} user1_password {{ ' }}' }}'"        # The Reverse Proxy password. Used to send BA header information to the back-end server.
               delegation_support: "yes"                                 # This option is valid only with junctions that were created with the type of ssl or sslproxy. Indicates single sign-on from a front-end Reverse Proxy server to a back-end Reverse Proxy server.
               http2_junction: "no"                                      # Specifies whether the junction supports the HTTP/2 protocol. By default, junctions do not support the HTTP/2 protocol. A valid value is "yes" or "no".
               http2_proxy: "no"                                         # Specifies whether the junction proxy support the HTTP/2 protocol. By default, junction proxies do not support the HTTP/2 protocol. A valid value is "yes" or "no".
@@ -110,11 +110,11 @@
     - skip_missing: True
   when: item[1].junction_point == (junction_point | default(item[1].junction_point)) and item[0].inst_name == (inst_name | default(item[0].inst_name))
   loop_control:
-    label: "{inst_name: {{ item[0].inst_name }}, junction_point: {{ item[1].junction_point }}}"
+    label: "{inst_name: {{ item[0].inst_name }}, junction_point: {{ item[1].junction_point } }}"
 
 - name: Include to delete undefined junctions [-e delete_junctions=True]
   include: include_delete_junctions.yml
   loop: "{{ instances }}"
   when: (delete_junctions | bool)
   loop_control:
-    label: "{inst_name: {{ item.inst_name }}, delete_junctions: {{ delete_junctions }}}"
+    label: "{inst_name: {{ item.inst_name }}, delete_junctions: {{ delete_junctions } }}"
