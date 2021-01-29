@@ -11,7 +11,7 @@
     - name: "Check each policy's status"
       set_fact:
         enabled: "true"
-      when: "{{ item.enabled == true }}"
+      when:  item.enabled == true 
       with_items: "{{ ret_obj.data }}"
 
     - name: "Assert that each authentication policy was disabled"

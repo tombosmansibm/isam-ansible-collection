@@ -1505,7 +1505,7 @@ Task/Handler: Check each policy's status
 
 601 Don't compare to literal True/False
 roles/aac/disable_all_authentication_policies/molecule/default/verify.yml:14
-      when: "{{ item.enabled == true }}"
+      when:  item.enabled == true 
 
 601 Don't compare to literal True/False
 roles/aac/disable_authentication_policies/molecule/default/check_for_all_false_status.yml:14
