@@ -5,21 +5,17 @@ galaxy_info:
   description: Role that adds a node to a cluster by importing signature file
   company: IBM
 
-  license: Apache
+  license: Apache-2.0
 
-  min_ansible_version: 2.2
+  min_ansible_version: 2.9
+
   platforms:
-    - name: Fedora
+    - name: GenericLinux
       versions:
-        - 30
-        - 29
-        - 28
-        - 27
+        - all
     - name: EL
       versions:
-        - 8
-        - 7
-        - 6
+        - all
 
   galaxy_tags:
   - isam

@@ -7,7 +7,15 @@ galaxy_info:
 
   license: Apache
 
-  min_ansible_version: 2.5
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: GenericLinux
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
 
   galaxy_tags:
   - v1.0.0
@@ -17,5 +25,4 @@ galaxy_info:
   - access_control_policies
   - aac
 
-dependencies:
-  - common_handlers
+dependencies: []

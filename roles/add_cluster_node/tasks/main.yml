@@ -23,5 +23,4 @@
   - Commit Changes
 
 # Commit cluster changes before proceeding
-#@ts-ignore
 - meta: flush_handlers
