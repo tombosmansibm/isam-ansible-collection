@@ -1025,7 +1025,7 @@ Task/Handler: include_vars file=../../vars/main.yml name=inventory __line__=8 __
 
 601 Don't compare to literal True/False
 roles/aac/configure_mapping_rules/molecule/export_file/verify.yml:19
-          - export_file_result.stat.exists == True
+          - export_file_result.stat.exists|bool
 
 502 All tasks should be named
 roles/aac/configure_mapping_rules/molecule/import_file/verify.yml:10
@@ -1537,7 +1537,7 @@ Task/Handler: include_vars file=../../vars/main.yml name=inventory __line__=8 __
 
 601 Don't compare to literal True/False
 roles/aac/export_runtime_template_root/molecule/default/verify.yml:19
-          - export_file_result.stat.exists == True
+          - export_file_result.stat.exists|bool
 
 701 Role info should contain platforms
 roles/aac/get_access_control_attributes/meta/main.yml:3
