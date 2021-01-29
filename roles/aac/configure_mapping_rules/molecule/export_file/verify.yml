@@ -17,6 +17,6 @@
     - name: Assert that exported file exits
       assert:
         that:
-          - export_file_result.stat.exists == True
+          - export_file_result.stat.exists|bool
         fail_msg: "The exported file {{ inventory.molecule_export_file }} does not exist"
         success_msg: "The exported file {{ inventory.molecule_export_file }} does exist"
