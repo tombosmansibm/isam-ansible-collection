@@ -3,9 +3,17 @@ galaxy_info:
   description: Role to configure STS chain templates
   company: IBM
 
-  license: Apache
+  licence: Apache-2.0
 
-  min_ansible_version: 2.2
+  platforms:
+    - name: GenericLinux
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+
+  min_ansible_version: 2.9
 
   galaxy_tags:
   - isam

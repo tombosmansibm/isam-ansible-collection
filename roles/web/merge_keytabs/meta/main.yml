@@ -4,22 +4,19 @@ galaxy_info:
   description: Role to merge keytab files for krb5 kerberos
   company: IBM
 
-  license: Apache
 
-  min_ansible_version: 2.7
+
+  license: Apache-2.0
+
+  min_ansible_version: 2.9
 
   platforms:
-    - name: Fedora
+    - name: GenericLinux
       versions:
-        - 30
-        - 29
-        - 28
-        - 27
+        - all
     - name: EL
       versions:
-        - 8
-        - 7
-        - 6
+        - all
 
   galaxy_tags:
     - isam

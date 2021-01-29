@@ -3,9 +3,18 @@ galaxy_info:
   description: Role to create federation partners
   company: IBM
 
-  license: Apache
+  license: Apache-2.0
 
-  min_ansible_version: 2.2
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: GenericLinux
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+
 
   galaxy_tags:
   - isam
