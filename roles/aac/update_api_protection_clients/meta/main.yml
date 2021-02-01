@@ -1,5 +1,4 @@
 ---
-
 galaxy_info:
   author: IBM
   description: Role to update api protection clients

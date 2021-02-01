@@ -16,7 +16,7 @@
 
       EXAMPLES
         ansible-playbook -i [...] playbooks/ansible_collections/base/activate_modules.yml
-        ansible-playbook -i [...] playbooks/ansible_collections/base/activate_modules.yml -e id=wga 
+        ansible-playbook -i [...] playbooks/ansible_collections/base/activate_modules.yml -e id=wga
         //although inventory contains other keys only activate wga (base) module
 
       INVENTORY

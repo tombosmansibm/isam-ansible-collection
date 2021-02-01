@@ -20,9 +20,9 @@
       loop: "{{ subsections_1st_level.properties }}"
       loop_control:
         loop_var: property
-        label: > 
-           { "realm": "{{ subsections_1st_level.realm }}", 
-             "subsection": "{{ subsections_1st_level.name | default('null') }}", 
-             "propname": "{{ property.propname if (property.propname is defined) }}", 
+        label: >
+           { "realm": "{{ subsections_1st_level.realm }}",
+             "subsection": "{{ subsections_1st_level.name | default('null') }}",
+             "propname": "{{ property.propname if (property.propname is defined) }}",
              "propvalue": "{{ property.propvalue if (property.propvalue is defined) }}" }
   

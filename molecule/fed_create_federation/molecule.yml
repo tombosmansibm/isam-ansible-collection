@@ -8,11 +8,11 @@ driver:
 platforms:
   - name: instance
 lint:
-  ansible-lint -x 702 -f plain
+  ansible-lint -x 702 -x 204 -f plain
 provisioner:
   name: ansible
   lint:
-    name: ansible-lint -x 702 -f plain
+    name: ansible-lint -x 702 -x 204 -f plain
     enabled: True
   ansible_args:
     - -e ansible_python_interpreter=/home/tbosmans/venvisam/bin/python

@@ -8,5 +8,5 @@
 #    {{ lookup('file',
 #    '/ansible/isam-setup-playbook/inventories/test/group_vars/restricted_nodes/junction-root/test.html')
 #    | replace('  ', '') }}
-#    
-#    
+#
+#

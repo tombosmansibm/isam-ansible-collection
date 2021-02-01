@@ -2,7 +2,7 @@
 
 # main task to configure authentication policies
 
-- name: Help INFO (-e help=true)
+- name: "Help INFO (-e help=true)"
   pause:
     echo: yes
     prompt: |

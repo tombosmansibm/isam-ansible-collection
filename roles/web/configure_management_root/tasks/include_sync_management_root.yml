@@ -27,7 +27,7 @@
     isamapi:
         instance_id: "{{ item.0.inst_name }}"
         id: "{{ local.element.path }}"
-  when: 
+  when:
     - local.stat is defined
     - not local.stat.exists
     - (local.element.path | dirname) not in (locals.results | json_query('[? !(stat.exists)].element.path') | difference([item.1.target]))
@@ -49,7 +49,7 @@
 - name: "[sync_up] consolidate update items in a list of updates [directory]"
   set_fact:
     directory_updates: |
-                                    "{{ directory_update_result.results | selectattr('ansible_facts','defined') 
+                                    "{{ directory_update_result.results | selectattr('ansible_facts','defined')
                                     | map(attribute='ansible_facts.directory_update_item') | list }}"
 
 - name: "[sync_up] list of file update items"
@@ -60,9 +60,9 @@
   loop_control:
     loop_var: upload
     label: >
-       "{'mgmt_action': 'upload', 
+       "{'mgmt_action': 'upload',
        'type': \"{{ upload.state }}\",
-       'target': \"{{ item.1.target +'/'+ upload.path }}\", 
+       'target': \"{{ item.1.target +'/'+ upload.path }}\",
        'file': \"{{ upload.root +'/'+ upload.path }}\"}"
   register: file_update_result
 
@@ -90,9 +90,9 @@
   loop_control:
     label: >
        "{ 'mgmt_action': \"{{ sync_create.mgmt_action }}\",
-      'inst_name': \"{{ item.0.inst_name }}\", 
-      'target': \"{{ sync_create.target | default(None) }}\", 
-      'type': \"{{ sync_create.type | default(None) }}\")"
+       'inst_name': \"{{ item.0.inst_name }}\",
+       'target': \"{{ sync_create.target | default(None) }}\",
+       'type': \"{{ sync_create.type | default(None) }}\")"
     loop_var: sync_create
   notify: Commit Changes
 

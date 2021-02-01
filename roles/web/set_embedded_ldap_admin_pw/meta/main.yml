@@ -1,8 +1,7 @@
 galaxy_info:
   author: IBM
+  description: Role to set embedded LDAP admin password
   company: IBM
-
-
 
   license: Apache-2.0
 

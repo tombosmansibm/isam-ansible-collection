@@ -44,7 +44,7 @@
     force: "{{ force | default(omit) }}"
     action: ibmsecurity.isam.fed.sts.module_chains.set
     isamapi: "{{ item }}"
-  when: 
+  when:
     - item.name == name
     - item.chainName == chainName
     - item.requestType == item.requestType
@@ -54,8 +54,8 @@
   notify: Commit Changes
   loop_control:
     label: >-
-      "{ name: {{ item.name }}, 
-        chainName: {{ item.chainName }}, 
-        requestType: {{ item.requestType }}, 
-        issuer.address: {{ item.issuer.address }}, 
+      "{ name: {{ item.name }},
+        chainName: {{ item.chainName }},
+        requestType: {{ item.requestType }},
+        issuer.address: {{ item.issuer.address }},
         appliesTo.address: {{ item.appliesTo.address } }}"

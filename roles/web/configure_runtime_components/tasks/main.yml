@@ -12,18 +12,18 @@
     action: "ibmsecurity.isam.web.runtime.configuration.entry.{{ item.method }}"
     isamapi: "{{ item | exclude('method') }}"
   with_items: "{{ policyserver_runtime.entries if (policyserver_runtime.entries is defined and (policyserver_runtime.entries != None)) else [] }}"
-  when: 
+  when:
     - item.method is defined
     - item.resource_id == resource_id
     - item.stanza_id == stanza_id
     - ((item.entries is defined and (item.entries | include_only(entry_id)) != [] ) or (item.entry_id is defined))
-  loop_control:    
-    label: > 
-      "( method: [{{ item.method }}], 
-       resource_id: [{{ item.resource_id }}], 
-       stanza_id: [{{ item.stanza_id }}], 
-       entries: [{{ item.entries|default('None') }}], 
-       entry_id: [{{ item.entry_id|default('None') }}], 
+  loop_control:
+    label: >
+      "( method: [{{ item.method }}],
+       resource_id: [{{ item.resource_id }}],
+       stanza_id: [{{ item.stanza_id }}],
+       entries: [{{ item.entries|default('None') }}],
+       entry_id: [{{ item.entry_id|default('None') }}],
        value_id: [{{ item.value_id|default('None') }}])"
 
   notify:

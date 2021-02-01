@@ -3,7 +3,7 @@
 # Provide the name, connection, description, locked flag, and connection manager for the LDAP server connection
 #
 # ldap_server_connection_name: "LDAP Connection"
-# ldap_server_connection_connection: 
+# ldap_server_connection_connection:
 #     hostName: ldap.int
 #     hostPort: "636"
 #     bindDN: cn=root

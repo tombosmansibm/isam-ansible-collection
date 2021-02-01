@@ -61,7 +61,7 @@
   with_items: "{{ instances }}"
   when: item.configuration is defined and item.inst_name == inst_name
   loop_control:
-   label: > 
+   label: >
      "{'inst_name': {{ item.inst_name }}{{ (', ' + \"'ip_address'\" + ': '
      + item.configuration.ip_address) if item.configuration.ip_address is defined } }}"
   notify: Commit Changes

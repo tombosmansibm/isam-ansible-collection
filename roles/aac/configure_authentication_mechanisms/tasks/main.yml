@@ -18,11 +18,11 @@
 
       EXAMPLES
         // configure all authentication from inventory
-        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_authentication_mechanisms.yml 
+        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_authentication_mechanisms.yml
         // only create or update tasks
         ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_authentication_mechanisms.yml  -e mechanism_action=set
         // only run delete task for Infomap_Sample_Mech_1  Attention: delete entry/task must be in the inventory
-        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_authentication_mechanisms.yml  
+        ansible-playbook -i [...] playbooks/ansible_collections/aac/configure_authentication_mechanisms.yml
                   -e mechanism_action=delete -e mechanism_name=Infomap_Sample_Mech_1
 
       INVENTORY
@@ -95,7 +95,7 @@
               value: Required # options: [Required | Optional ]
             - key: U2F.attestationSource
               value: ''
-              #The keystore or key set to use for certificate attestation validation. 
+              #The keystore or key set to use for certificate attestation validation.
               #Either the name of the keystore on the appliance, or the URL for a JSON Web Key Set
             - key: U2F.attestationType
               value: None # options [ JWKS | KeyStore | None]

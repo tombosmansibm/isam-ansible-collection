@@ -16,10 +16,10 @@
       EXAMPLES
         // nothing to be deleted !
         ansible-playbook -i [...] playbooks/ansible_collections/web/delete_reverseproxy_instance.yml
-        // delete instance with name default        
+        // delete instance with name default
         ansible-playbook -i [...] playbooks/ansible_collections/web/delete_reverseproxy_instance.yml -e inst_name=default
         // delete instance with name default and password on cmd. Attention->not recommended, use ansible-vault and inventory instead
-        ansible-playbook -i [...] playbooks/ansible_collections/web/delete_reverseproxy_instance.yml -e inst_name=default -e admin_pwd=<password> 
+        ansible-playbook -i [...] playbooks/ansible_collections/web/delete_reverseproxy_instance.yml -e inst_name=default -e admin_pwd=<password>
 
       INVENTORY
       ==========

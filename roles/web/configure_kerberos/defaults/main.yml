@@ -25,7 +25,7 @@ realm: "{{
 
 subsection: "{{ subsections_1st_level.1.name|default('none') == 'none' | ternary(item.1.name|default('null'), subsections_1st_level.1.name|default('none')) }}"
 #>
-#                    "{{ subsections_1st_level.1.name if (subsections_1st_level.1 is defined and subsections_1st_level.1.name is defined) 
+#                    "{{ subsections_1st_level.1.name if (subsections_1st_level.1 is defined and subsections_1st_level.1.name is defined)
 #                    else (item.1.name if (item is defined and item.1 is defined and item.1.name is defined)) }}"
 
 propname: "{{ item.1.propname if (item.1 is defined and item.1.propname is defined) else (property.propname if (property.propname is defined)) }}"

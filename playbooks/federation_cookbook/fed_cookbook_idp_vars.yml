@@ -189,7 +189,7 @@ oidc_cloud_partner_configuration: {
 }
 
 #17.1 Configuring the STSUU to STSUU Chain Template
-sts_chain_templates: 
+sts_chain_templates:
    - name: "STSUU to STSUU"
      chainItems:
        - id: "default-stsuu"
@@ -346,9 +346,9 @@ attribute_sources:
   ]
 
 #18.3.4 Configuring the STS chain for LDAP Attribute Map
-sts_ldap_templates: 
+sts_ldap_templates:
   - name: "STSUULDAPAttributeMapper"
-    chainItems: 
+    chainItems:
       - id: "default-stsuu"
         mode: "validate"
       - id: "default-map"
@@ -382,7 +382,7 @@ update_sts_chain: {
 }
 
 #19.1 Create the ISAM Credential to SAML 2.0 STS Chain Template
-saml_sts_templates: 
+saml_sts_templates:
   - name: "IVCredToSAML20JunctionExample"
     chainItems:
       - id: "default-ivc"
@@ -397,7 +397,7 @@ saml_mapper_name: "default-map"
 saml20_ivc_to_saml20_name: "saml20_ivc_to_saml20"
 saml_issue_name: "default-saml2_0"
 saml_validate_name: "default-ivc"
-saml_sts_chain: 
+saml_sts_chain:
 chainName: IVCredToSAML20JunctionExample
 appliesTo:
   address: http://appliesto/saml20
@@ -413,7 +413,7 @@ validateRequests: false
 #19.3 Update the reverse proxy configuration file
 set_reverseproxy_conf_entries_19_3:
   - stanza_id: "tfim-cluster:samljct"
-    entries: 
+    entries:
       -  - "server"
          - "9,https://localhost:443/TrustServerWST13/services/RequestSecurityToken"
       -  - "ssl-keyfile"
@@ -431,7 +431,7 @@ set_reverseproxy_conf_entries_19_3:
       -  - "basic-auth-passwd"
          - "Passw0rd"
   - stanza_id: "tfimsso:/samljct"
-    entries: 
+    entries:
        - - token-type
          - http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0
        - - applies-to
@@ -451,7 +451,7 @@ set_reverseproxy_conf_entries_19_3:
        - - one-time-token
          - "true"
        - - token-collection-size
-         - "1"   
+         - "1"
 
 #19.4 Create the /samljct Junction
 samljct_pdadmin_commands: ["server task default-webseald-isam.myidp.ibm.com create -t ssl -h localhost -p 443 -Y /samljct"]
@@ -467,10 +467,10 @@ lmiAdminId: "admin"
 lmiAdminPwd: "Passw0rd"
 websealHostNameAndPort: "www.myidp.ibm.com:443"
 acUuidCookieName: "ac.uuid"
-acl_pdadmin_commands: 
+acl_pdadmin_commands:
    - "acl attach /WebSEAL/isam.myidp.ibm.com-default/isam/mobile-demo default-webseal"
    - "server replicate"
-demo_pdadmin_commands: 
+demo_pdadmin_commands:
     - "acl create temp-unauth"
     - "acl modify temp-unauth set group iv-admin TcmdbsvaBRrxl"
     - "acl modify temp-unauth set group webseal-servers Tgmdbsrxl"
@@ -483,14 +483,14 @@ web_username: "sec_master"
 web_password: "Passw0rd"
 
 #21.1 Replace login.html on the identity provider
-update_management_root_idandfilename: 
+update_management_root_idandfilename:
 - id: management/C/login.html
   filename: /home/demouser/IAM/isam-ansible-collection/playbooks/federation_cookbook/providedfiles/Automation/pages/saml20/login.html
 update_management_root_instance_id: "default"
 
 #21.2 Configure authentication macros in the federation runtime
 new_point_of_contact_name: "PartnerID Macro + Access Manager Username and extended attributes"
-new_point_of_contact_authenticateCallbacks: 
+new_point_of_contact_authenticateCallbacks:
   - index: 0
     moduleReferenceId: websealPocAuthenticateCallback
     parameters:

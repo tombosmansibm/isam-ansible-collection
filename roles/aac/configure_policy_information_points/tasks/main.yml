@@ -2,7 +2,7 @@
 
 # main task to configure policy information points
 
-- name: Help INFO (-e help=true)
+- name: "Help INFO (-e help=true)"
   pause:
     echo: yes
     prompt: |
@@ -62,7 +62,7 @@
       | combine({ 'description': item.description } if (item.description is defined) else {})
       | combine({ 'type': item.type } if (item.type is defined) else {})
       | combine({ 'new_name': item.new_name } if (item.new_name is defined) else {})
-      | combine({ 'filepath': (item.filepath if((item.filepath | regex_search('^/')) == '/') else (inventory_dir +'/'+ item.filepath)) } if (item.filepath is defined) else {}) 
+      | combine({ 'filepath': (item.filepath if((item.filepath | regex_search('^/')) == '/') else (inventory_dir +'/'+ item.filepath)) } if (item.filepath is defined) else {})
     }}"
 
     
