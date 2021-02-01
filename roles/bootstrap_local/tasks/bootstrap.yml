@@ -78,7 +78,9 @@
 - debug: var=cmd_out
 
 - name: create metadata ISO
-  shell: "{{ BS_mkisofs }} {{ BS_mkisoflags }} {{ BS_tmpdir }}/{{ BS_vm_hostname }}-metadata.iso {{ BS_tmpdir }}/{{ BS_vm_hostname }}-metadata  >/dev/null 2>&1"
+  shell: >
+      "{{ BS_mkisofs }} {{ BS_mkisoflags }} {{ BS_tmpdir }}/{{ BS_vm_hostname }}-metadata.iso 
+       {{ BS_tmpdir }}/{{ BS_vm_hostname }}-metadata  >/dev/null 2>&1"
   register: shell_out
   changed_when: true
 - debug: var=shell_out

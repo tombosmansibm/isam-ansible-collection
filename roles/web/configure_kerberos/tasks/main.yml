@@ -27,12 +27,18 @@
         ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml # do all steps
 
         # available filters per kerberos_action:
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=import_keytabs -e keytab_file=default.krb5 # do only import of keytabs with limit to a specific file from inventory !ATTENTION!: only basename from path variable is used for filtering
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=create_subsections -e realm=realm_1 -e subsection=sub_1
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=configure_properties -e realm=realm_1 -e subsection=sub_1 -e propname=prop_1 -e propvalue=value_1
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=configure_defaults -e default_name=default_realm -e default_value=realm_1
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=configure_domains -e domain_name=domain_1 -e domain_value=realm_1
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=configure_ca_paths -e ca_paths_name=domain_1 -e client_realm=domain_1 -e server_realm=s_realm_1 -e intermediate_realm=i_realm_1
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml -e kerberos_action=import_keytabs -e keytab_file=default.krb5
+        # do only import of keytabs with limit to a specific file from inventory !ATTENTION!: only basename from path variable is used for filtering
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml 
+           -e kerberos_action=create_subsections -e realm=realm_1 -e subsection=sub_1
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml 
+          -e kerberos_action=configure_properties -e realm=realm_1 -e subsection=sub_1 -e propname=prop_1 -e propvalue=value_1
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml 
+          -e kerberos_action=configure_defaults -e default_name=default_realm -e default_value=realm_1
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml 
+          -e kerberos_action=configure_domains -e domain_name=domain_1 -e domain_value=realm_1
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_kerberos.yml 
+          -e kerberos_action=configure_ca_paths -e ca_paths_name=domain_1 -e client_realm=domain_1 -e server_realm=s_realm_1 -e intermediate_realm=i_realm_1
 
       INVENTORY
       ==========
@@ -170,7 +176,9 @@
     - "{{ kerberos.realms }}"
     - properties
   loop_control:
-    label: "{ \"realm\": \"{{ item.0.realm }}\", \"propname\": \"{{ item.1.propname if (item.1.propname is defined) }}\", \"propvalue\": \"{{ item.1.propvalue if (item.1.propvalue is defined) }}\" }"
+    label: >
+       "{ \"realm\": \"{{ item.0.realm }}\", \"propname\": \"{{ item.1.propname if (item.1.propname is defined) }}\",
+       \"propvalue\": \"{{ item.1.propvalue if (item.1.propvalue is defined) }}\" }"
   notify: Commit Changes
 
 - include_tasks: include_configure_subsections_properties_1st_level.yml

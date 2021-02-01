@@ -242,9 +242,9 @@ load_signer_certificates: [{
 set_current_point_of_contact_name: Access Manager Credential
 
 #14.2.1 Add extra login links to login page
-update_management_root_idandfilename: [
-                                        {"id": "management/C/login.html", "filename": "/home/demouser/IAM/isam-ansible-collection/playbooks/federation_cookbook/providedfiles/login.html"}
-                                      ]
+update_management_root_idandfilename:
+                                      - id: "management/C/login.html"
+                                        filename: "/home/demouser/IAM/isam-ansible-collection/playbooks/federation_cookbook/providedfiles/login.html"
 update_management_root_instance_id: "default"
 
 #20.3 Scenario: USERNAME authentication

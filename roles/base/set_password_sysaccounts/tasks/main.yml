@@ -15,7 +15,8 @@
 
       EXAMPLES
         ansible-playbook -i [...] playbooks/ansible_collections/base/set_password_sysaccounts.yml
-        ansible-playbook -i [...] playbooks/ansible_collections/base/set_password_sysaccounts.yml -e id=sample_user // limit password setting to one user id at runtime
+        // limit password setting to one user id at runtime
+        ansible-playbook -i [...] playbooks/ansible_collections/base/set_password_sysaccounts.yml -e id=sample_user
 
       INVENTORY
       ==========

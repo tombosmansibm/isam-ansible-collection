@@ -1,5 +1,4 @@
 ---
-
 # main task to configure reverse proxy instances
 
 - name: Help INFO (-e help=true)
@@ -22,7 +21,8 @@
 
       EXAMPLES
         ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml // create and add all inventory defined junctions
-        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml -e delete_junction_server=True -e delete_junctions=True // create, add all inventory defined junctions and delete all junction servers or junctions that are missing from inventory
+        ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml -e delete_junction_server=True -e delete_junctions=True 
+        // create, add all inventory defined junctions and delete all junction servers or junctions that are missing from inventory
         ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml -e inst_name=default // create and add inventory defined junctions for instance default only
         ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml -e junction_point=/jct1 // do all tasks only if junction equals /jct1
         ansible-playbook -i [...] playbooks/ansible_collections/web/configure_reverseproxy_junctions.yml -e junction_point=/jct2 -e delete_junction_server=True -e delete_junctions=True // if junction_point renamed in inventory to /jct2, then this command can reconfigure that junction server under the new name

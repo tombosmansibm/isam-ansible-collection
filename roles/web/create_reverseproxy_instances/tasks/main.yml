@@ -15,7 +15,8 @@
 
       EXAMPLES
         ansible-playbook -i [...] playbooks/ansible_collections/web/create_reverseproxy_instances.yml
-        ansible-playbook -i [...] playbooks/ansible_collections/web/create_reverseproxy_instances.yml -e inst_name=default // limit the creation of reverse proxy instances at runtime
+        // limit the creation of reverse proxy instances at runtime
+        ansible-playbook -i [...] playbooks/ansible_collections/web/create_reverseproxy_instances.yml -e inst_name=default
 
       INVENTORY
       ==========
@@ -60,5 +61,7 @@
   with_items: "{{ instances }}"
   when: item.configuration is defined and item.inst_name == inst_name
   loop_control:
-   label: "{'inst_name': {{ item.inst_name }}{{ (', ' + \"'ip_address'\" + ': ' + item.configuration.ip_address)  if item.configuration.ip_address is defined } }}"
+   label: > 
+     "{'inst_name': {{ item.inst_name }}{{ (', ' + \"'ip_address'\" + ': '
+     + item.configuration.ip_address) if item.configuration.ip_address is defined } }}"
   notify: Commit Changes

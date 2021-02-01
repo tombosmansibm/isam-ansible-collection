@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  connection: localhost
+  gather_facts: false
+  tasks:
+    - name: loop variable
+      set_fact:
+        bla: "bla"
+      vars:
+             subsections_1st_level:
+                       realm: realm_1
+                       properties:
+                         - propname: prop_1
+                           propvalue: value_1
+                       subsections:
+                         - name: sub_1
+                           subsections:
+                             - name: sub_sub_1
+     
+      loop: "{{ subsections_1st_level.properties }}"
+      loop_control:
+        loop_var: property
+        label: > 
+           { "realm": "{{ subsections_1st_level.realm }}", 
+             "subsection": "{{ subsections_1st_level.name | default('null') }}", 
+             "propname": "{{ property.propname if (property.propname is defined) }}", 
+             "propvalue": "{{ property.propvalue if (property.propvalue is defined) }}" }
+  
