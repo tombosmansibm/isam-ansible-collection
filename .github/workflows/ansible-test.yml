@@ -1,3 +1,5 @@
+on: ubuntu-latest
+
 jobs:
   tests:
     name: >-
@@ -61,8 +63,8 @@ jobs:
   needs:
   - tests
 
-  runs-on: ubuntu-latest
-
+  uses: ubuntu-latest
+  
   timeout-minutes: 1
 
   steps:
@@ -70,4 +72,3 @@ jobs:
     uses: re-actors/alls-green@release/v1
     with:
       jobs: ${{ toJSON(needs) }}
-...
