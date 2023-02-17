@@ -1,0 +1,111 @@
+jobs:
+  tests:
+    name: >-
+      ${{ matrix.ansible-core-version }}
+      @
+      ${{ matrix.origin-python-version }}:
+      ${{ matrix.testing-type }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    strategy:
+      fail-fast: false
+      matrix:
+        ansible-core-version:
+        - ''
+        collection-root:
+        - ''
+        collection-src-directory:
+        - ''
+        docker-image:
+        - default
+        git-checkout-ref:
+        - ''
+        origin-python-version:
+        - ''
+        pre-action-cmd:
+        - ''
+        pre-test-cmd:
+        - ''
+        pull-request-change-detection:
+        - ''
+        target:
+        - ''
+        target-python-version:
+        - ''
+        test-deps:
+        - ''
+        testing-type:
+        - ''
+        coverage:
+        - auto
+        exclude:
+        - ansible-core-version: ''
+    steps:
+- name: Perform integration testing with ansible-test
+  uses: ansible-community/ansible-test-gh-action@release/v1
+  with:
+    ansible-core-version: stable-2.14
+    pre-test-cmd: echo This runs before the ansible-test invocation
+    target-python-version: 3.9
+    controller-python-version: auto
+    testing-type: integration
+    test-deps: ansible.netcommon
+- name: Perform sanity testing with ansible-test
+  uses: ansible-community/ansible-test-gh-action@release/v1
+  with:
+    ansible-core-version: stable-2.14
+    testing-type: sanity
+- name: Perform unit testing with ansible-test
+  uses: ansible-community/ansible-test-gh-action@release/v1
+  with:
+    ansible-core-version: stable-2.14
+    pre-test-cmd: echo This runs before the ansible-test invocation
+    target-python-version: 3.9
+    testing-type: units
+    test-deps: >-
+      ansible.netcommon
+      ansible.utils
+
+    - name: Log the outputs
+      run: |
+        echo "ansible-playbook-executable=${{
+          steps.tests.outputs.ansible-playbook-executable
+        }}"
+        echo "ansible-test-executable=${{
+          steps.tests.outputs.ansible-test-executable
+        }}"
+        echo "checkout-directory=${{
+          steps.tests.outputs.checkout-directory
+        }}"
+        echo "collection-fqcn=${{
+          steps.tests.outputs.collection-fqcn
+        }}"
+        echo "collection-name=${{
+          steps.tests.outputs.collection-name
+        }}"
+        echo "collection-namespace=${{
+          steps.tests.outputs.collection-namespace
+        }}"
+        echo "origin-python-path=${{
+          steps.tests.outputs.origin-python-path
+        }}"
+        echo "origin-python-version=${{
+          steps.tests.outputs.origin-python-version
+        }}"
+
+  check:  # This job does nothing and is only used for the branch protection
+    if: always()
+
+    needs:
+    - tests
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 1
+
+    steps:
+    - name: Decide whether the needed jobs succeeded or failed
+      uses: re-actors/alls-green@release/v1
+      with:
+        jobs: ${{ toJSON(needs) }}
+...
