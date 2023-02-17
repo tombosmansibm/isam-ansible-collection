@@ -25,4 +25,5 @@ jobs:
           target-python-version: 3.9
           ansible-core-version: stable-2.14
           testing-type: sanity
+          test-deps: ibmsecurity
 
