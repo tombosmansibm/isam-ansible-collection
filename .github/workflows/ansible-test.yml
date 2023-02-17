@@ -60,14 +60,13 @@ jobs:
     check:  # This job does nothing and is only used for the branch protection
       if: always()
 
-  needs:
+needs:
   - tests
 
-  runs-on: ubuntu-latest
+runs-on: ubuntu-latest
   
-  timeout-minutes: 1
-
-  steps:
+timeout-minutes: 1
+steps:
   - name: Decide whether the needed jobs succeeded or failed
     uses: re-actors/alls-green@release/v1
     with:
