@@ -6,8 +6,7 @@
 DOCUMENTATION = """
     author:
       - IBM (@ibmsecurity)
-    name:
-      - ibm.isam
+    name: isam
     short_description: Use ibmsecurity python library to connect to IBM ISAM appliances
     description:
         - This connection plugin provides a connection to IBM ISAM devices via the C(ibmsecurity) python library.
@@ -25,8 +24,7 @@ DOCUMENTATION = """
         port:
           type: int
           description:
-            - Specifies the port on the LMI Port that the IBM ISAM Appliance listens
-              on.
+            - Specifies the port on the LMI Port that the IBM ISAM Appliance listens on.
           ini:
             - section: defaults
               key: remote_port
