@@ -38,11 +38,6 @@ author:
   - Maciej Delmanowski (@drybjed)
 requirements:
   - python-ldap
-attributes:
-  check_mode:
-    support: full
-  diff_mode:
-    support: none
 options:
   bind_dn:
     type: str

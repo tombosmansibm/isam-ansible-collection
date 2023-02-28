@@ -7,13 +7,12 @@ from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 DOCUMENTATION = """
-    author:
-      - IBM (@ibmsecurity)
+    author: IBM (@ibmsecurity)
     name: isam
     short_description: Use ibmsecurity python library to connect to IBM ISAM appliances
     description:
         - This connection plugin provides a connection to IBM ISAM devices via the C(ibmsecurity) python library.
-    version_added: "1.0"
+    version_added: '1.0'
     options:
         host:
           type: str
