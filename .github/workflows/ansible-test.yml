@@ -5,9 +5,13 @@ jobs:
   build-and-test:
     strategy:
       matrix:
-        coverage:
-        - auto
-
+        python-version:
+          - 3.6
+          - 3.8
+          - 3.9
+        ansible-core-version:
+          - stable-2.12
+          - stable-2.14
     runs-on: ubuntu-latest
     steps:
 #      - name: Perform integration testing with ansible-test
@@ -22,8 +26,8 @@ jobs:
       - name: Perform sanity testing with ansible-test
         uses: ansible-community/ansible-test-gh-action@v1.12.0
         with:
-          target-python-version: 3.9
-          ansible-core-version: stable-2.14
+          target-python-version: ${{ matrix.python-version }}
+          ansible-core-version: ${{ matrix.ansible-core-version }}
           testing-type: sanity
           pre-test-cmd: echo Starting ansible-test
 
