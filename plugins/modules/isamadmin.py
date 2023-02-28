@@ -57,7 +57,6 @@ EXAMPLES = '''
   register: ret_obj
 '''
 
-
 __metaclass__ = type
 import logging.config
 import sys

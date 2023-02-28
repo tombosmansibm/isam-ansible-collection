@@ -11,8 +11,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
-DOCUMENTATION = r'''
----
+DOCUMENTATION = """
 module: ldap_attr
 short_description: Add or remove LDAP attribute values.
 description:
