@@ -19,11 +19,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 
-
 from __future__ import (absolute_import, division, print_function)
-
 __metaclass__ = type
-
 
 DOCUMENTATION = """
 ---
@@ -33,7 +30,7 @@ description:
   - Add or remove LDAP attribute values.
 notes:
   - This only deals with attributes on existing entries. To add or remove
-    whole entries, see M(ldap_entry).
+    whole entries, see see M(community.general.ldap_entry).
   - The default authentication settings will attempt to use a SASL EXTERNAL
     bind over a UNIX domain socket. This works well with the default Ubuntu
     install for example, which includes a cn=peercred,cn=external,cn=auth ACL

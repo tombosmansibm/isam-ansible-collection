@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2022 IBM
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 from __future__ import (absolute_import, division, print_function)
 import ibmsecurity.isam.web.runtime.pdadmin
 from ibmsecurity.user.isamuser import ISAMUser
@@ -5,8 +11,10 @@ from ibmsecurity.user.isamuser import ISAMUser
 __metaclass__ = type
 
 DOCUMENTATION = """
-    author: Ansible Security Automation Team <https://github.com/ansible-security>
-    name: ibm.isam
+    author:
+      - IBM (@ibmsecurity)
+    name: 
+      - ibm.isam
     short_description: Use ibmsecurity python library to connect to IBM ISAM appliances
     description:
         - This connection plugin provides a connection to IBM ISAM devices via the C(ibmsecurity) python library.
