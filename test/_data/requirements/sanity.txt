@@ -1,2 +1,0 @@
-ibmsecurity
-python_ldap

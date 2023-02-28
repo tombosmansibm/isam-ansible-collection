@@ -30,4 +30,3 @@ jobs:
           ansible-core-version: ${{ matrix.ansible-core-version }}
           testing-type: sanity
           pre-test-cmd: echo Starting ansible-test
-
