@@ -1,28 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# (c) 2016, Peter Sagerson <psagers@getcloak.com>
-# (c) 2016, Jiri Tyr <jiri.tyr@gmail.com>
-#
-# This file is part of Ansible
-#
-# Ansible is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# Ansible is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright (c) 2019, Maciej Delmanowski <drybjed@gmail.com>
+# Copyright (c) 2017, Alexander Korinek <noles@a3k.net>
+# Copyright (c) 2016, Peter Sagerson <psagers@ignorare.net>
+# Copyright (c) 2016, Jiri Tyr <jiri.tyr@gmail.com>
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
-DOCUMENTATION = """
+DOCUMENTATION = r'''
 ---
 module: ldap_attr
 short_description: Add or remove LDAP attribute values.
@@ -30,7 +19,7 @@ description:
   - Add or remove LDAP attribute values.
 notes:
   - This only deals with attributes on existing entries. To add or remove
-    whole entries, see see M(community.general.ldap_entry).
+    whole entries, see M(community.general.ldap_entry).
   - The default authentication settings will attempt to use a SASL EXTERNAL
     bind over a UNIX domain socket. This works well with the default Ubuntu
     install for example, which includes a cn=peercred,cn=external,cn=auth ACL
@@ -43,10 +32,18 @@ notes:
     rules. This should work out in most cases, but it is theoretically
     possible to see spurious changes when target and actual values are
     semantically identical but lexically distinct.
+version_added: '0.2.0'
 author:
   - Jiri Tyr (@jtyr)
+  - Alexander Korinek (@noles)
+  - Maciej Delmanowski (@drybjed)
 requirements:
   - python-ldap
+attributes:
+  check_mode:
+    support: full
+  diff_mode:
+    support: none
 options:
   bind_dn:
     type: str
@@ -59,7 +56,7 @@ options:
   bind_pw:
     type: str
     required: false
-    default: null
+    default: ''
     description:
       - The password to use with I(bind_dn).
   dn:
@@ -346,8 +343,7 @@ def main():
             try:
                 ldap.connection.modify_s(ldap.dn, modlist)
             except Exception as e:
-                module.fail_json(
-                    msg="Attribute action failed.", details=str(e))
+                module.fail_json(msg="Attribute action failed.", details=to_native(e))
 
     module.exit_json(changed=changed, modlist=modlist)
 
