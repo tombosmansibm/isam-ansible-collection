@@ -13,7 +13,7 @@ DOCUMENTATION = """
     short_description: Use ibmsecurity python library to connect to IBM ISAM appliances
     description:
         - This connection plugin provides a connection to IBM ISAM devices via the C(ibmsecurity) python library.
-    version_added: "1.0.27"
+    version_added: "1.0"
     options:
         host:
           type: str
