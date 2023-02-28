@@ -130,7 +130,7 @@ class Connection(NetworkConnectionBase):
     def __init__(self, play_context, new_stdin, *args, **kwargs):
         super(Connection, self).__init__(play_context, new_stdin, *args, **kwargs)
 
-        #Fix for noneType error
+        # Fix for noneType error
         self._sub_plugin = {"name": "isam_server", "type": "external"}
 
         self.isam_server = None
