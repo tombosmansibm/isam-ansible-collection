@@ -6,7 +6,7 @@
 DOCUMENTATION = """
     author:
       - IBM (@ibmsecurity)
-    name: 
+    name:
       - ibm.isam
     short_description: Use ibmsecurity python library to connect to IBM ISAM appliances
     description:
