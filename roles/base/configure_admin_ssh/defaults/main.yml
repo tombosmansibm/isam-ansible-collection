@@ -1,0 +1,6 @@
+---
+# Default homedir.  This defaults to inventory_dir for backwards compatibility reasons,
+#
+#  a better default value for homedir, would be playbook_dir:
+#       `homedir: "{{ playbook_dir }}"`
+homedir: "{{ inventory_dir }}"
