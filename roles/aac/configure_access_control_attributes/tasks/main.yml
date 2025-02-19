@@ -12,7 +12,7 @@
 #       datatype: Boolean
 #       predefined: false
 #       issuer: ""
-#       matcher: 1
+#       matcher: '1'
 #       storageDomain:
 #         device: false
 #         session: false
